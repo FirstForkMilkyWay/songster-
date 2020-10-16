@@ -1,1 +1,3 @@
 # songster 
+
+puts "hi"
