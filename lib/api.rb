@@ -10,5 +10,8 @@ class API
    binding.pry 
   end 
 
+#response[0]["artist"]["name"] = Metallica 
+#response[0]["title"] = Enter Sandman 
+
 
 end 
