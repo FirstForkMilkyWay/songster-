@@ -5,7 +5,7 @@ require_relative "artist.rb"
 
 class API
 
-    attr_accessor :name, :artist
+    attr_accessor :name, :artist, :tab_types
 
   def self.fetch_songs
    url = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=Metallica"
@@ -16,6 +16,7 @@ class API
        song = Songs.new
        song.name = response[0]["title"]
        song.artist = response[0]["artist"]["name"]
+       song.tab_types = response[0]["tabTypes"]
 
      binding.pry
    end
