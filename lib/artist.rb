@@ -4,10 +4,10 @@ require_relative "api.rb"
 
 class Artist
 
-attr_accessor :name
+attr_accessor :artist
 
-  def initialize(name)
-    @name = name
+  def initialize(artist)
+    @artist = artist
   end
 
 
