@@ -1,17 +1,31 @@
 require 'pry'
 require 'rest-client'
 require 'json'
+require_relative "artist.rb"
 
-class API 
+class API
 
-  def self.fetch_songs 
+    attr_accessor :name
+
+  def self.fetch_songs
    url = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=Metallica"
    response = JSON.parse(RestClient.get(url).to_s)
-   binding.pry 
-  end 
+   array_of_songs = response[0]
+   array_of_songs.map do |song_name|
+    # response.each do |song_name|
+       song = Songs.new
+       song.name = song_name[0]["title"]
+     binding.pry
+   end
+  end
 
-#response[0]["artist"]["name"] = Metallica 
-#response[0]["title"] = Enter Sandman 
+  def self.sort_song
+
+  end
 
 
-end 
+
+
+#response[0]["artist"]["name"] = Metallica
+#response[0]["title"] = Enter Sandman
+end
