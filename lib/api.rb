@@ -15,7 +15,7 @@ class API
     # response.each do |song_name|
        song = Songs.new
        song.name = response[0]["title"]
-      #  song.artist = response[0]["artist"]["name"]
+       song.artist = response[0]["artist"]["name"]
 
      binding.pry
    end
