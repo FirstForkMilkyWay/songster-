@@ -10,11 +10,11 @@ class API
   def self.fetch_songs
    url = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=Metallica"
    response = JSON.parse(RestClient.get(url).to_s)
-   array_of_songs = response[0]
-   array_of_songs.map do |song_name|
+  #  array_of_songs = response[0]
+  #  array_of_songs.each do |song_name["title"]|
     # response.each do |song_name|
        song = Songs.new
-       song.name = song_name[0]["title"]
+       song.name = response[0]["title"]
      binding.pry
    end
   end
